@@ -66,6 +66,7 @@ public class Smoke6LoginPageTest {
 		//application.logout();
 		application.quit();
 		softAssert.assertAll();
+		System.out.println("Done");
 	}
 
 }
