@@ -19,7 +19,7 @@ import com.softserve.edu.rs.pages.LoginPage.LoginPageL10n;
 
 public class Smoke6LoginPageTest {
 
-	@DataProvider(parallel = true)
+	@DataProvider//(parallel = true)
     public Object[][] getApplicationSources(ITestContext context) {
 //		// Suite
 //        HashMap<String, String> suiteParameters = new HashMap<String, String>(context.getCurrentXmlTest().getSuite().getParameters()); 
