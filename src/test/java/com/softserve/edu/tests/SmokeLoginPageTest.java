@@ -13,7 +13,7 @@ import com.softserve.edu.rs.pages.LoginValidatorPage;
 
 public class SmokeLoginPageTest {
 
-	//@Test
+	@Test
 	public void checkChangeLanguage() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -49,7 +49,7 @@ public class SmokeLoginPageTest {
 		driver.quit();
 	}
 
-	@Test
+	//@Test
 	public void checkInvalidLogin() throws Exception {
 		WebDriver driver = new FirefoxDriver();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

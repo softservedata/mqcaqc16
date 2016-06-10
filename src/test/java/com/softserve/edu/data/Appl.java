@@ -25,9 +25,9 @@ public class Appl {
 //				.setEmail("adminWork@i.ua")
 //				.setLogin("adminWork")
 //				.setPassword("adminWork")
-//				.setCommunity("Україна")
-//				.setRole("Адміністратор")
-//				.setStatus("Активний")
+//				.setCommunity("РЈРєСЂР°С—РЅР°")
+//				.setRole("РђРґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂ")
+//				.setStatus("РђРєС‚РёРІРЅРёР№")
 //				.build();
 //		System.out.println("User Login = " + user.getLogin());
 //		System.out.println("User Login = " + user.setLogin("111").toString());
@@ -39,9 +39,9 @@ public class Appl {
 				.setEmail("adminWork@i.ua")
 				.setLogin("adminWork")
 				.setPassword("adminWork")
-				.setCommunity("Україна")
-				.setRole("Адміністратор")
-				.setStatus("Активний")
+				.setCommunity("РЈРєСЂР°С—РЅР°")
+				.setRole("РђРґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂ")
+				.setStatus("РђРєС‚РёРІРЅРёР№")
 				.build();
 		System.out.println("User Login = " + user.getLogin());
 		//System.out.println("User Login = " + user.setLogin("111").toString()); // Error

@@ -24,9 +24,9 @@ public final class UserRepository {
 		.setEmail("adminWork@i.ua")
 		.setLogin("admin")
 		.setPassword("admin")
-		.setCommunity("Україна")
-		.setRole("Адміністратор")
-		.setStatus("Активний")
+		.setCommunity("РЈРєСЂР°С—РЅР°")
+		.setRole("РђРґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂ")
+		.setStatus("РђРєС‚РёРІРЅРёР№")
 		.build();
 	}
 
@@ -37,9 +37,9 @@ public final class UserRepository {
 		.setEmail("adminWork@i.ua")
 		.setLogin("adminWork")
 		.setPassword("adminWork")
-		.setCommunity("Україна")
-		.setRole("Адміністратор")
-		.setStatus("Активний")
+		.setCommunity("РЈРєСЂР°С—РЅР°")
+		.setRole("РђРґРјС–РЅС–СЃС‚СЂР°С‚РѕСЂ")
+		.setStatus("РђРєС‚РёРІРЅРёР№")
 		.build();
 	}
 

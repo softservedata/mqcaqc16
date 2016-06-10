@@ -23,7 +23,7 @@
 				</methods>
 			</class>
 			 -->
-			<class name="com.softserve.edu.tests.Smoke6LoginPageTest" />
+			<class name="com.softserve.edu.tests.SmokeLoginPageTest" />
 			<class name="com.softserve.edu.AppTest" />
 		</classes>
 	</test> <!-- Test -->
