@@ -21,16 +21,16 @@ public class SmokeLoginPageTest {
 		//
 		LoginPage loginPage = new LoginPage(driver);
 		// Check Ukrainian
-		Assert.assertEquals(loginPage.getLoginLabelText(), "Логін");
-		Assert.assertEquals(loginPage.getPasswordLabelText(), "Пароль");
-		Assert.assertEquals(loginPage.getSignintText(), "Увійти");
+		Assert.assertEquals(loginPage.getLoginLabelText(), "Р›РѕРіС–РЅ");
+		Assert.assertEquals(loginPage.getPasswordLabelText(), "РџР°СЂРѕР»СЊ");
+		Assert.assertEquals(loginPage.getSignintText(), "РЈРІС–Р№С‚Рё");
 		Thread.sleep(2000);
 		// Switch to Russian
 		loginPage = loginPage.changeLanguage(ChangeLanguageFields.RUSSIAN);
 		// Check Russian
-		Assert.assertEquals(loginPage.getLoginLabelText(), "Логин");
-		Assert.assertEquals(loginPage.getPasswordLabelText(), "Пароль");
-		Assert.assertEquals(loginPage.getSignintText(), "Войти");
+		Assert.assertEquals(loginPage.getLoginLabelText(), "Р›РѕРіРёРЅ");
+		Assert.assertEquals(loginPage.getPasswordLabelText(), "РџР°СЂРѕР»СЊ");
+		Assert.assertEquals(loginPage.getSignintText(), "Р’РѕР№С‚Рё");
 		Thread.sleep(2000);
 		// Switch to English
 		loginPage = loginPage.changeLanguage(ChangeLanguageFields.ENGLISH);
@@ -42,9 +42,9 @@ public class SmokeLoginPageTest {
 		// Switch to Ukrainian
 		loginPage = loginPage.changeLanguage(ChangeLanguageFields.UKRAINIAN);
 		// Check Russian
-		Assert.assertEquals(loginPage.getLoginLabelText(), "Логін");
-		Assert.assertEquals(loginPage.getPasswordLabelText(), "Пароль");
-		Assert.assertEquals(loginPage.getSignintText(), "Увійти");
+		Assert.assertEquals(loginPage.getLoginLabelText(), "Р›РѕРіС–РЅ");
+		Assert.assertEquals(loginPage.getPasswordLabelText(), "РџР°СЂРѕР»СЊ");
+		Assert.assertEquals(loginPage.getSignintText(), "РЈРІС–Р№С‚Рё");
 		Thread.sleep(2000);
 		driver.quit();
 	}
@@ -63,7 +63,7 @@ public class SmokeLoginPageTest {
 		//LoginValidatorPage loginValidatorPage = loginPage.unsuccessfulLogin("proba", "proba");
 		// STUB
 		LoginValidatorPage loginValidatorPage = new LoginValidatorPage(driver);
-		Assert.assertEquals(loginValidatorPage.getInvalidLoginValidatorText(), "Неправильний логін або пароль");
+		Assert.assertEquals(loginValidatorPage.getInvalidLoginValidatorText(), "РќРµРїСЂР°РІРёР»СЊРЅРёР№ Р»РѕРіС–РЅ Р°Р±Рѕ РїР°СЂРѕР»СЊ");
 		Thread.sleep(2000);
 		driver.quit();
 	}

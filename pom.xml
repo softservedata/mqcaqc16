@@ -86,7 +86,7 @@
 					</systemPropertyVariables>
 					<suiteXmlFiles>
 <!-- 						<suiteXmlFile>testngUnit.xml</suiteXmlFile> -->
-<!-- 						<suiteXmlFile>testng.xml</suiteXmlFile> -->
+						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 					<reportsDirectory>${testng.reports.directory}</reportsDirectory>
 				</configuration>
