@@ -23,8 +23,9 @@
 				</methods>
 			</class>
 			 -->
-			<class name="com.softserve.edu.tests.SmokeLoginPageTest" />
-			<class name="com.softserve.edu.AppTest" />
+<!-- 			<class name="com.softserve.edu.tests.SmokeLoginPageTest" /> -->
+<!-- 			<class name="com.softserve.edu.AppTest" /> -->
+			<class name="com.softserve.edu.tests.SmokeDBTest" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->
