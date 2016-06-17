@@ -18,4 +18,10 @@ public final class ApplicationSourcesRepository {
 				"http://registrator.herokuapp.com/logout", 5L);
 	}
 
+	public static ApplicationSources getHtmlUnitHerokuApplication() {
+		return new ApplicationSources("HtmlUnit", "",
+				"http://registrator.herokuapp.com/login",
+				"http://registrator.herokuapp.com/logout", 5L);
+	}
+
 }

@@ -5,6 +5,7 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 import com.softserve.edu.data.ApplicationSources;
 
@@ -46,7 +47,9 @@ public class Application {
 			return getFirefoxDriver();
 		} else if (applicationSources.getBrowserName().toLowerCase().equals("chrome")) {
 			return getChromeDriver();
-		}
+		} else if (applicationSources.getBrowserName().toLowerCase().contains("htmlunit")) {
+			return getHtmlUnitDriver();
+		} 
 		// Get Default Browser
 		return getFirefoxDriver();
 	}
@@ -60,6 +63,12 @@ public class Application {
 		System.setProperty("webdriver.chrome.driver",
 				applicationSources.getDriverPath());
 		driver = new ChromeDriver();
+		return driver;
+	}
+
+	private WebDriver getHtmlUnitDriver() {
+		driver = new HtmlUnitDriver(true);
+		((HtmlUnitDriver) driver).setJavascriptEnabled(true);
 		return driver;
 	}
 

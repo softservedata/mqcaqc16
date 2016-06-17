@@ -22,6 +22,7 @@ public class ParameterUtils {
 	}
 
 	public ApplicationSources updateApplicationSources(ApplicationSources applicationSources, ITestContext context) {
+		// From TestNG.xml Context
 		if (context != null) {
 	        HashMap<String, String> testParameters = new HashMap<String, String>(context.getCurrentXmlTest().getAllParameters());
 	        for (String key : testParameters.keySet()) {
@@ -41,6 +42,17 @@ public class ParameterUtils {
 	        	}
 	        }
 		}
+		// From pom.xml Properties
+		applicationSources = updateBrowserNameByPOM(applicationSources);
 		return applicationSources;
 	}
+
+	public ApplicationSources updateBrowserNameByPOM(ApplicationSources applicationSources) {
+		if (System.getProperty("browser.name") != null) {
+			applicationSources.setBrowserName(System.getProperty("browser.name"));
+			System.out.println("updateBrowserNameByPOM: browserName = " + System.getProperty("browser.name"));
+		}
+		return applicationSources;
+	}
+	
 }
