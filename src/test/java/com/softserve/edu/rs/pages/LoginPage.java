@@ -5,8 +5,11 @@ import java.util.HashMap;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import com.softserve.edu.data.IUser;
+import com.softserve.edu.tests.Smoke8LocalizationTest;
 
 public class LoginPage extends ATopPage {
 	
@@ -32,6 +35,8 @@ public class LoginPage extends ATopPage {
     }
 
 	// Fields
+	private static final Logger logger = LoggerFactory.getLogger(LoginPage.class);
+	//
     private WebElement loginLabel;
     private WebElement loginInput;
     private WebElement passwordLabel;
@@ -45,6 +50,7 @@ public class LoginPage extends ATopPage {
 		this.passwordLabel = driver.findElement(By.xpath("//label[contains(@for,'inputPassword')]"));
 		this.passwordInput = driver.findElement(By.id("password"));
 		this.signin = driver.findElement(By.cssSelector("button.btn.btn-primary"));
+		logger.trace("Done Constructor");
 	}
 
     // PageObject
@@ -136,8 +142,10 @@ public class LoginPage extends ATopPage {
     // Business Logic
 
     public LoginPage changeLanguage(ChangeLanguageFields language) {
+    	logger.debug("Start changeLanguage");
     	setChangeLanguage(language);
         // Return a new page object representing the destination.
+    	logger.debug("Done changeLanguage");
         return new LoginPage(driver);
     }
 

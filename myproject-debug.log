@@ -1,0 +1,42 @@
+[ERROR] 09:56:43 main Calc:calcMethod:10 - Calc Error
+[ WARN] 09:56:43 main Calc:calcMethod:11 - Calc Warning
+[ INFO] 09:56:43 main Calc:calcMethod:12 - Calc Info
+[ERROR] 09:56:43 main Some:someMethod:11 - Some Error
+[ WARN] 09:56:43 main Some:someMethod:12 - Some Warning
+[ INFO] 09:56:43 main Some:someMethod:13 - Some Info
+[DEBUG] 09:56:43 main Some:someMethod:14 - Some Debug
+[ERROR] 10:01:03 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:01:03 main Some:someMethod:11 - Some Error
+[ WARN] 10:01:03 main Some:someMethod:12 - Some Warning
+[ INFO] 10:01:03 main Some:someMethod:13 - Some Info
+[DEBUG] 10:01:03 main Some:someMethod:14 - Some Debug
+[ERROR] 10:01:54 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:01:54 main Some:someMethod:11 - Some Error
+[ WARN] 10:01:54 main Some:someMethod:12 - Some Warning
+[ INFO] 10:01:54 main Some:someMethod:13 - Some Info
+[DEBUG] 10:01:54 main Some:someMethod:14 - Some Debug
+[ERROR] 10:02:24 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:02:24 main Some:someMethod:11 - Some Error
+[ WARN] 10:02:24 main Some:someMethod:12 - Some Warning
+[ INFO] 10:02:24 main Some:someMethod:13 - Some Info
+[DEBUG] 10:02:24 main Some:someMethod:14 - Some Debug
+[ERROR] 10:02:33 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:02:33 main Some:someMethod:11 - Some Error
+[ WARN] 10:02:33 main Some:someMethod:12 - Some Warning
+[ INFO] 10:02:33 main Some:someMethod:13 - Some Info
+[DEBUG] 10:02:33 main Some:someMethod:14 - Some Debug
+[ERROR] 10:02:41 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:02:41 main Some:someMethod:11 - Some Error
+[ WARN] 10:02:41 main Some:someMethod:12 - Some Warning
+[ INFO] 10:02:41 main Some:someMethod:13 - Some Info
+[DEBUG] 10:02:41 main Some:someMethod:14 - Some Debug
+[ERROR] 10:03:02 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:03:02 main Some:someMethod:11 - Some Error
+[ WARN] 10:03:02 main Some:someMethod:12 - Some Warning
+[ INFO] 10:03:02 main Some:someMethod:13 - Some Info
+[DEBUG] 10:03:02 main Some:someMethod:14 - Some Debug
+[ERROR] 10:03:18 main Calc:calcMethod:10 - Calc Error
+[ERROR] 10:03:18 main Some:someMethod:11 - Some Error
+[ WARN] 10:03:18 main Some:someMethod:12 - Some Warning
+[ INFO] 10:03:18 main Some:someMethod:13 - Some Info
+[DEBUG] 10:03:18 main Some:someMethod:14 - Some Debug

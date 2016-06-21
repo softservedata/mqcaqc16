@@ -1,0 +1,8 @@
+[ERROR] time: 2016-06-21 10:03:18,992 file: Appl.java class: com.softserve.edu.App method: appMethod line: 25 Message: App Error
+[WARN] time: 2016-06-21 10:03:18,995 file: Appl.java class: com.softserve.edu.App method: appMethod line: 26 Message: App Warning
+[INFO] time: 2016-06-21 10:03:18,995 file: Appl.java class: com.softserve.edu.App method: appMethod line: 27 Message: App Info
+[ERROR] time: 2016-06-21 10:03:18,995 file: Calc.java class: com.softserve.training.Calc method: calcMethod line: 10 Message: Calc Error
+[ERROR] time: 2016-06-21 10:03:18,996 file: Some.java class: com.softserve.training.Some method: someMethod line: 11 Message: Some Error
+[WARN] time: 2016-06-21 10:03:18,996 file: Some.java class: com.softserve.training.Some method: someMethod line: 12 Message: Some Warning
+[INFO] time: 2016-06-21 10:03:18,998 file: Some.java class: com.softserve.training.Some method: someMethod line: 13 Message: Some Info
+[DEBUG] time: 2016-06-21 10:03:18,998 file: Some.java class: com.softserve.training.Some method: someMethod line: 14 Message: Some Debug
