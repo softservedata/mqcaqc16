@@ -16,6 +16,24 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 import com.softserve.edu.data.ApplicationSources;
 
 public class Application {
+	
+	public static enum ReporterLevels {
+        SCREENSHOT_LEVEL(2),
+        ERROR_LEVEL(2), // 3
+        WARNING_LEVEL(5),
+        INFO_LEVEL(7),
+        DEBUG_LEVEL(9);
+        private int level;
+
+        private ReporterLevels(int level) {
+            this.level = level;
+        }
+
+        public int getLevel() {
+            return this.level;
+        }
+    }
+	
 	private WebDriver driver;
 	private ApplicationSources applicationSources;
 	//

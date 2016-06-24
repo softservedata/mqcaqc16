@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.Assert;
 import org.testng.ITestContext;
+import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
@@ -18,6 +19,7 @@ import com.softserve.edu.data.ApplicationSourcesRepository;
 import com.softserve.edu.data.ParameterUtils;
 import com.softserve.edu.rs.pages.ATopPage.ChangeLanguageFields;
 import com.softserve.edu.rs.pages.Application;
+import com.softserve.edu.rs.pages.Application.ReporterLevels;
 import com.softserve.edu.rs.pages.LoginPage;
 import com.softserve.edu.rs.pages.LoginPage.LoginPageL10n;
 
@@ -40,6 +42,13 @@ public class Smoke8LocalizationTest {
 	
 	private void setApplication(Application currentApplication) {
 		this.applications.put(Thread.currentThread().getId(), currentApplication);
+	}
+
+	private void screenShortToReport() {
+		String insertHTMLCode = "<br><div><image style=\"max-width:100%%\" src=\"%s\"/></div>";
+		String fileNamePath = getApplication().captureScreen();
+		Reporter.log(String.format(insertHTMLCode,fileNamePath));
+	                //fileNamePath.substring(fileNamePath.lastIndexOf("/") + 1)));
 	}
 
 	@BeforeClass
@@ -100,6 +109,8 @@ public class Smoke8LocalizationTest {
 	@Test(dataProvider = "getApplicationSources")
 	public void checkLocalization2(ApplicationSources applicationSources,
 			ChangeLanguageFields changeLanguageFields) throws Exception {
+		Reporter.log("<BR>###@Test Start Thread ID = " + String.valueOf(Thread.currentThread().getId()),
+				ReporterLevels.INFO_LEVEL.getLevel(), true);
 		logger.info("Start TC");
 		logger.info("+++@Test Thread ID = " + Thread.currentThread().getId());
 		logger.debug("Start TEST checkLocalization2, changeLanguageFields = "
@@ -107,7 +118,7 @@ public class Smoke8LocalizationTest {
 //		System.out.println("Start TEST checkLocalization2, changeLanguageFields = "
 //				+ changeLanguageFields.toString());
 		// For parallel
-		SoftAssert softAssert = new SoftAssert();
+		//SoftAssert softAssert = new SoftAssert();
 		// Precondition
 		Application application = Application.get(applicationSources);
 		setApplication(application);
@@ -119,6 +130,7 @@ public class Smoke8LocalizationTest {
 		loginPage = loginPage.changeLanguage(changeLanguageFields);
 		//Thread.sleep(2000);
 		// Check
+		screenShortToReport();
 		logger.info("Assert.assertEquals Actual: " + loginPage.getLoginLabelText()
 				+ " Expected: " + LoginPageL10n.LOGIN_LABEL.getLocalization(changeLanguageFields));
 		Assert.assertEquals(loginPage.getLoginLabelText(),
@@ -134,14 +146,16 @@ public class Smoke8LocalizationTest {
 		//Thread.sleep(2000);
 		// application.logout();
 		//application.quit();
-		softAssert.assertAll();
+		//softAssert.assertAll();
 		logger.debug("Done TEST checkLocalization2, changeLanguageFields = "
 				+ changeLanguageFields.toString());
 //		System.out.println("Done TEST checkLocalization2, changeLanguageFields = "
 //				+ changeLanguageFields.toString());
 		logger.info("Done TC");
 		setCurrentTestCompleted(true);
-		Thread.sleep(2000);
+		Reporter.log("<BR>###@Test Done Thread ID = " + String.valueOf(Thread.currentThread().getId()),
+				ReporterLevels.INFO_LEVEL.getLevel(), true);
+		Thread.sleep(1000);
 	}
 
 }
