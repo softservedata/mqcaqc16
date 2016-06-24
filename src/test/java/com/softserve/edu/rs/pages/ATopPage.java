@@ -8,7 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 public abstract class ATopPage {
 
 	public static enum ChangeLanguageFields {
-		UKRAINIAN("українська0"),
+		UKRAINIAN("українська"),
 		RUSSIAN("русский"),
 		ENGLISH("english");
 		//
