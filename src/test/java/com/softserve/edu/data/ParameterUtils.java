@@ -2,10 +2,14 @@ package com.softserve.edu.data;
 
 import java.util.HashMap;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.ITestContext;
 
 public class ParameterUtils {
 	private static volatile ParameterUtils instance = null;
+	//
+	private static final Logger logger = LoggerFactory.getLogger(ParameterUtils.class);
 
 	private ParameterUtils() {
 	}
@@ -48,9 +52,11 @@ public class ParameterUtils {
 	}
 
 	public ApplicationSources updateBrowserNameByPOM(ApplicationSources applicationSources) {
+		logger.info("Start updateBrowserNameByPOM()");
 		if (System.getProperty("browser.name") != null) {
 			applicationSources.setBrowserName(System.getProperty("browser.name"));
 			System.out.println("updateBrowserNameByPOM: browserName = " + System.getProperty("browser.name"));
+			logger.info("updateBrowserNameByPOM: browserName = " + System.getProperty("browser.name"));
 		}
 		return applicationSources;
 	}

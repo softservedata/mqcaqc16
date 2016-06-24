@@ -81,17 +81,17 @@ public class Smoke8LocalizationTest {
 		loginPage = loginPage.changeLanguage(changeLanguageFields);
 		//Thread.sleep(2000);
 		// Check
-		logger.trace("Assert.assertEquals Actual: " + loginPage.getLoginLabelText()
+		logger.info("Assert.assertEquals Actual: " + loginPage.getLoginLabelText()
 				+ " Expected: " + LoginPageL10n.LOGIN_LABEL.getLocalization(changeLanguageFields));
 		Assert.assertEquals(loginPage.getLoginLabelText(),
 				LoginPageL10n.LOGIN_LABEL.getLocalization(changeLanguageFields));
-		logger.trace("Assert.assertEquals Actual: " + loginPage.getPasswordLabelText()
+		logger.info("Assert.assertEquals Actual: " + loginPage.getPasswordLabelText()
 			+ " Expected: " + LoginPageL10n.PASSWORD_LABEL.getLocalization(changeLanguageFields));
 		Assert.assertEquals(loginPage.getPasswordLabelText(),
 				LoginPageL10n.PASSWORD_LABEL.getLocalization(changeLanguageFields));
-		logger.trace("Assert.assertEquals Actual: " + loginPage.getSignintText()
+		logger.info("Assert.assertEquals Actual: " + loginPage.getSignintText()
 			+ " Expected: " + LoginPageL10n.SUBMIT_BUTTON.getLocalization(changeLanguageFields));
-		Assert.assertEquals(loginPage.getSignintText()+"11",
+		Assert.assertEquals(loginPage.getSignintText(),
 				LoginPageL10n.SUBMIT_BUTTON.getLocalization(changeLanguageFields));
 		//Thread.sleep(2000);
 		// application.logout();
