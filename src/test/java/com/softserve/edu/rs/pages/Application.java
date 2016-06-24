@@ -1,7 +1,13 @@
 package com.softserve.edu.rs.pages;
 
+import java.io.File;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -12,6 +18,13 @@ import com.softserve.edu.data.ApplicationSources;
 public class Application {
 	private WebDriver driver;
 	private ApplicationSources applicationSources;
+	//
+	private final String TIME_TEMPLATE = "yyyy_MM_dd HH-mm-ss";
+    private final String FILE_SUFFIX = " CaptureScreenImage.png";
+    private final String DEFAULT_DIRECTORY = "./test-output";
+    private final String MAVEN_DIRECTORY = "surefire.reports.directory";
+    private final String SLASH = "/";
+    private final String FAILED_TO_CREATE = "Failed to create screenshot: %s";
 	
 	private Application(ApplicationSources applicationSources) {
 		this.applicationSources = applicationSources;
@@ -70,6 +83,40 @@ public class Application {
 		driver = new HtmlUnitDriver(true);
 		((HtmlUnitDriver) driver).setJavascriptEnabled(true);
 		return driver;
+	}
+
+	private String getCurrentTime() {
+		return new SimpleDateFormat(TIME_TEMPLATE).format(new Date());
+	}
+
+	private String getOutputDirectory() {
+        String outputDirectory = System.getProperty(MAVEN_DIRECTORY);
+        if ((outputDirectory == null) || (outputDirectory.isEmpty())) {
+            outputDirectory = DEFAULT_DIRECTORY;
+        }
+        return outputDirectory + SLASH;
+    }
+
+	private String getAbsolutePathFileName() {
+		return getOutputDirectory() + getCurrentTime() + FILE_SUFFIX;
+	}
+	
+	/**
+	 * @return Absolute path of filename.
+	 */
+	public String captureScreen() {
+		String absolutePathFileName = null;
+		if (!applicationSources.getBrowserName().toLowerCase().contains("htmlunit")) {
+			absolutePathFileName = getAbsolutePathFileName();
+			try {
+	            File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+	            FileUtils.copyFile(srcFile, new File(absolutePathFileName));
+			} catch (Exception e) {
+				throw new RuntimeException(String.format(FAILED_TO_CREATE,
+						absolutePathFileName), e);
+			}
+		}
+		return absolutePathFileName;
 	}
 
 }
